@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class PayRoll {
 
-    public Map<String, Integer> calculatePay(List<Employee> employees) {
+    public Map<String, Integer> calculateAll(List<Employee> employees) {
 
         Map<String, Integer> result = new HashMap<>();
 
