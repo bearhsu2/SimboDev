@@ -7,11 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
 public class PayRollTest {
     @Test
-    public void calculatePay() throws Exception {
+    public void testCalculateAll() throws Exception {
+
 
         // Prepare data
         List<Employee> employees = new ArrayList<>();
@@ -41,7 +40,7 @@ public class PayRollTest {
 
         // Run method
         PayRoll payRoll = new PayRoll();
-        Map<String, Integer> result = payRoll.calculatePay(employees);
+        Map<String, Integer> result = payRoll.calculateAll(employees);
 
         // Check answer
         Assert.assertNotNull(result);
