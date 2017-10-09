@@ -4,9 +4,11 @@ public class Parameters {
     private String action;
     private double bet;
 
-    public Parameters(double bet) {
+    public Parameters(String action, double bet) {
+        this.action = action;
         this.bet = bet;
     }
+
 
     public double getBet() {
         return bet;

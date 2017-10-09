@@ -7,7 +7,7 @@ public class GamePlayRuntimeException extends RuntimeException {
     // 1: uninitialized play
     // 2: insufficient balance
     // 3: unsupported operation
-    // 4: bet less than 0
+    // 4: bet not positive
     // 5: unknown action: can only be: "INIT", "SPIN", or "LUCKY-BALL"
     int errorCode;
 

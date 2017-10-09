@@ -3,12 +3,12 @@ package idv.kuma.game;
 
 import com.google.gson.Gson;
 import idv.kuma.game.exception.GamePlayRuntimeException;
+import idv.kuma.game.module.LuckyBallDrawer;
 import idv.kuma.game.vo.Parameters;
 import idv.kuma.game.vo.User;
 import org.joda.time.DateTime;
 
 public class GameEventHandler {
-
 
     public Response handleClientRequest(User user, String paramStr) {
 
@@ -42,22 +42,21 @@ public class GameEventHandler {
 
                     }
 
-
                 }
                 break;
                 case "SPIN": {
 
-                    if (parameters.getBet() < 0) {
+                    if (parameters.getBet() > 0) {
                         if ("DICE".equals(user.getGameType())) {
 
                             if (!user.isInitialized()) {
-                                throw new GamePlayRuntimeException(6);
+                                throw new GamePlayRuntimeException(1);
                             } else if (user.getBalance() < bet) {
                                 throw new GamePlayRuntimeException(2);
                             } else {
                                 // play dice spin: RTP 98%
                                 double oldBalance = user.getBalance();
-                                double returnAmount = 98 / 100 * bet;
+                                double returnAmount = 98D / 100D * bet;
                                 double newBalance = user.getBalance() - bet + returnAmount;
                                 user.setBalance(newBalance);
                             }
@@ -72,7 +71,7 @@ public class GameEventHandler {
                                 // play poker: RTP 96%
                                 double oldBalance = user.getBalance();
 //                        double newBalance = bet * 96 / 100;
-                                double returnAmount = 96 / 100 * bet;
+                                double returnAmount = 96D / 100D * bet;
                                 double newBalance = user.getBalance() - bet + returnAmount;
                                 user.setBalance(newBalance);
                             }
@@ -88,14 +87,20 @@ public class GameEventHandler {
                         // check if bet > 0
                         if (parameters.getBet() > 0) {
 
+                            if (!user.isInitialized()) {
+                                throw new GamePlayRuntimeException(1);
+                            } else if (user.getBalance() < bet) {
+                                throw new GamePlayRuntimeException(2);
+                            }
+
 
                             DateTime dateTime = DateTime.now();
 
-                            int h = dateTime.getHourOfDay();
-                            int m = dateTime.getMinuteOfHour();
-                            int s = dateTime.getSecondOfMinute();
+                            // new LuckyBallDrawer
+                            LuckyBallDrawer drawer = new LuckyBallDrawer();
 
-                            int result = (h + m + s) % 10;
+                            // get result
+                            int result = drawer.draw(dateTime.getDayOfMonth(), dateTime.getHourOfDay(), dateTime.getMinuteOfHour(), dateTime.getSecondOfMinute());
 
                             double returnAmount = 0;
                             if (result >= 5) {
@@ -144,6 +149,7 @@ public class GameEventHandler {
 //                        }
                     }
 
+
                 }
                 break;
                 default:
@@ -153,7 +159,7 @@ public class GameEventHandler {
 
             }
 
-            Gson newGson = new Gson();
+            // Gson newGson = new Gson();
             return new Response(0, "balance: " + user.getBalance());
         } catch (Exception e) {
 
