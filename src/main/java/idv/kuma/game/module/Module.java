@@ -6,7 +6,7 @@ public interface Module {
 
     void doSpin(double bet);
 
-    void doLuckyBall();
+    void doLuckyBall(double bet);
 
     void checkUser();
 

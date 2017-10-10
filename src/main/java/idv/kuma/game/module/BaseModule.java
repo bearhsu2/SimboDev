@@ -27,7 +27,7 @@ public abstract class BaseModule implements Module {
         checkUser();
         checkBet(bet);
         checkBalance(bet);
-        
+
         double returnAmount = rtp * bet;
         double newBalance = user.getBalance() - bet + returnAmount;
         user.setBalance(newBalance);
