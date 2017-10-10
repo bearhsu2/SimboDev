@@ -2,10 +2,6 @@ package idv.kuma.game;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sun.org.apache.regexp.internal.RE;
-import com.sun.source.tree.AssertTree;
-import idv.kuma.game.exception.GamePlayRuntimeException;
-import idv.kuma.game.module.LuckyBallDrawer;
 import idv.kuma.game.vo.Parameters;
 import idv.kuma.game.vo.User;
 import org.joda.time.DateTime;
@@ -16,16 +12,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
-import org.powermock.api.mockito.mockpolicies.Slf4jMockPolicy;
-import org.powermock.core.classloader.annotations.MockPolicy;
-import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.core.classloader.annotations.SuppressStaticInitializationFor;
 import org.powermock.modules.junit4.PowerMockRunner;
-
-import java.util.Date;
-
-import static org.junit.Assert.*;
 
 
 @RunWith(PowerMockRunner.class)
