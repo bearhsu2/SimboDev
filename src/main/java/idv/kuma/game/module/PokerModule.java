@@ -1,5 +1,6 @@
 package idv.kuma.game.module;
 
+import idv.kuma.game.code.ReturnCode;
 import idv.kuma.game.exception.GamePlayRuntimeException;
 import idv.kuma.game.vo.User;
 
@@ -14,6 +15,6 @@ public class PokerModule extends BaseModule {
     @Override
     public void doLuckyBall(double bet) {
         // Unsupported operation: POKER game doesn't support "LUCKY-BALL"
-        throw new GamePlayRuntimeException(3);
+        throw new GamePlayRuntimeException(ReturnCode.UNSUPPORTED_OPERATION);
     }
 }

@@ -3,8 +3,8 @@ package idv.kuma.game;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import idv.kuma.game.code.ReturnCode;
 import idv.kuma.game.exception.GamePlayRuntimeException;
-import idv.kuma.game.module.LuckyBallDrawer;
 import idv.kuma.game.module.Module;
 import idv.kuma.game.vo.Parameters;
 import idv.kuma.game.vo.User;
@@ -38,18 +38,20 @@ public class GameEventHandler {
                 break;
                 default:
                     // unknown action
-                    throw new GamePlayRuntimeException(5);
+                    throw new GamePlayRuntimeException(ReturnCode.UNKNOWN_ACTION);
             }
-            return new Response(0, "balance: " + user.getBalance());
+            return new Response(ReturnCode.OK.getValue(), "balance: " + user.getBalance());
         } catch (Exception e) {
-
-            if (e instanceof GamePlayRuntimeException) {
-                return new Response(((GamePlayRuntimeException) e).getErrorCode(), "Internal Error");
-            } else {
-                return new Response(9999, "Unknown Error");
-            }
-
+            return handleException(e);
         }
+
+    }
+
+    private Response handleException(Exception e) {
+        if (e instanceof GamePlayRuntimeException)
+            return new Response(((GamePlayRuntimeException) e).getReturnCode().getValue(), "Internal Error");
+
+        return new Response(ReturnCode.UNKNOWN_ERROR.getValue(), "Unknown Error");
 
     }
 
