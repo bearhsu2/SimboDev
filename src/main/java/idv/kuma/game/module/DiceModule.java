@@ -4,37 +4,30 @@ import idv.kuma.game.vo.User;
 import org.joda.time.DateTime;
 
 public class DiceModule extends BaseModule {
+
+    private LuckyBallDrawer drawer;
+
     public DiceModule(User user) {
         super(user);
 
         rtp = 0.98;
+        drawer = new LuckyBallDrawer();
     }
 
     @Override
     public void doLuckyBall(double bet) {
-
-
         checkUser();
         checkBet(bet);
         checkBalance(bet);
 
-        DateTime dateTime = DateTime.now();
-
-        // new LuckyBallDrawer
-        LuckyBallDrawer drawer = new LuckyBallDrawer();
-
-        // get result
-        int drawResult = drawer.draw(dateTime.getDayOfMonth(), dateTime.getHourOfDay(), dateTime.getMinuteOfHour(), dateTime.getSecondOfMinute());
-
-        double returnAmount = calculateReturnAmount(bet, drawResult);
+        double returnAmount = calculateReturnAmount(bet);
 
         double newBalance = user.getBalance() - bet + returnAmount;
         user.setBalance(newBalance);
-
     }
 
-    private double calculateReturnAmount(double bet, double drawResult) {
-        return drawResult >= 5 ? bet * 2 : 0;
+    private double calculateReturnAmount(double bet) {
+        return drawer.draw(DateTime.now()) >= 5 ? bet * 2 : 0;
     }
 
 

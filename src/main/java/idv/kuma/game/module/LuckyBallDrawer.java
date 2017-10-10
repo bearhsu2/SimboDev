@@ -1,11 +1,10 @@
 package idv.kuma.game.module;
 
+import org.joda.time.DateTime;
+
 public class LuckyBallDrawer {
 
-    public int draw(int d, int h, int m, int s){
-
-        int result = (h + m + s) % 10;
-
-        return result;
+    public int draw(DateTime dateTime){
+        return (dateTime.getHourOfDay() + dateTime.getMinuteOfHour() + dateTime.getSecondOfMinute()) % 10;
     }
 }
