@@ -5,11 +5,8 @@ import idv.kuma.game.vo.User;
 public class DiceModule extends BaseModule {
     public DiceModule(User user) {
         super(user);
-    }
 
-    @Override
-    public void doSpin() {
-
+        rtp = 0.98;
     }
 
     @Override

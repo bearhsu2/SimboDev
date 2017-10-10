@@ -4,7 +4,7 @@ public interface Module {
 
     void doInit();
 
-    void doSpin();
+    void doSpin(double bet);
 
     void doLuckyBall();
 }

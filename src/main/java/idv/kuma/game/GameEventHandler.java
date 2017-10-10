@@ -19,8 +19,6 @@ public class GameEventHandler {
         String action = parameters.getAction();
         double bet = parameters.getBet();
 
-        int returnCode;
-
         Module module = user.getModule();
 
         try {
@@ -30,40 +28,8 @@ public class GameEventHandler {
                 }
                 break;
                 case "SPIN": {
-
-                    if (parameters.getBet() > 0) {
-                        if ("DICE".equals(user.getGameType())) {
-
-                            if (!user.isInitialized()) {
-                                throw new GamePlayRuntimeException(1);
-                            } else if (user.getBalance() < bet) {
-                                throw new GamePlayRuntimeException(2);
-                            } else {
-                                // play dice spin: RTP 98%
-                                double oldBalance = user.getBalance();
-                                double returnAmount = 98D / 100D * bet;
-                                double newBalance = user.getBalance() - bet + returnAmount;
-                                user.setBalance(newBalance);
-                            }
-
-                        } else {
-
-                            if (!user.isInitialized()) {
-                                throw new GamePlayRuntimeException(1);
-                            } else if (user.getBalance() < bet) {
-                                throw new GamePlayRuntimeException(2);
-                            } else {
-                                // play poker: RTP 96%
-                                double oldBalance = user.getBalance();
-//                        double newBalance = bet * 96 / 100;
-                                double returnAmount = 96D / 100D * bet;
-                                double newBalance = user.getBalance() - bet + returnAmount;
-                                user.setBalance(newBalance);
-                            }
-                        }
-                    } else {
-                        throw new GamePlayRuntimeException(4);
-                    }
+                    checkBet(bet);
+                    module.doSpin(bet);
                 }
                 break;
                 case "LUCKY-BALL": {
@@ -155,6 +121,13 @@ public class GameEventHandler {
             }
 
         }
+
+    }
+
+    private void checkBet(double bet) {
+
+        if (bet <= 0)
+            throw new GamePlayRuntimeException(4);
 
     }
 }
