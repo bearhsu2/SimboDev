@@ -1,6 +1,5 @@
 package idv.kuma.game.vo;
 
-import com.sun.xml.internal.ws.resources.WsdlmodelMessages;
 import idv.kuma.game.module.Module;
 import idv.kuma.game.module.ModuleFactory;
 
