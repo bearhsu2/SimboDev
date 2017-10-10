@@ -17,7 +17,7 @@ public class DiceModule extends BaseModule {
         checkUser();
         checkBet(bet);
         checkBalance(bet);
-        
+
         DateTime dateTime = DateTime.now();
 
         // new LuckyBallDrawer
