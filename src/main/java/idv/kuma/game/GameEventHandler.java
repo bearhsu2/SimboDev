@@ -28,7 +28,6 @@ public class GameEventHandler {
                 }
                 break;
                 case "SPIN": {
-                    checkBet(bet);
                     module.doSpin(bet);
                 }
                 break;
@@ -124,10 +123,4 @@ public class GameEventHandler {
 
     }
 
-    private void checkBet(double bet) {
-
-        if (bet <= 0)
-            throw new GamePlayRuntimeException(4);
-
-    }
 }

@@ -7,4 +7,12 @@ public interface Module {
     void doSpin(double bet);
 
     void doLuckyBall();
+
+    void checkUser();
+
+    void checkBet(double bet);
+
+    void checkBalance(double bet);
+
+
 }

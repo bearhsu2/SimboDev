@@ -24,15 +24,32 @@ public abstract class BaseModule implements Module {
     @Override
     public void doSpin(double bet) {
 
-        if (!user.isInitialized())
-            throw new GamePlayRuntimeException(1);
-        if (user.getBalance() < bet)
-            throw new GamePlayRuntimeException(2);
-
+        checkUser();
+        checkBet(bet);
+        checkBalance(bet);
+        
         double returnAmount = rtp * bet;
         double newBalance = user.getBalance() - bet + returnAmount;
         user.setBalance(newBalance);
 
+    }
+
+    @Override
+    public void checkUser() {
+        if (!user.isInitialized())
+            throw new GamePlayRuntimeException(1);
+    }
+
+    @Override
+    public void checkBet(double bet) {
+        if (bet <= 0)
+            throw new GamePlayRuntimeException(4);
+    }
+
+    @Override
+    public void checkBalance(double bet) {
+        if (user.getBalance() < bet)
+            throw new GamePlayRuntimeException(2);
     }
 
 
