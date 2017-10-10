@@ -4,6 +4,7 @@ package idv.kuma.game;
 import com.google.gson.Gson;
 import idv.kuma.game.exception.GamePlayRuntimeException;
 import idv.kuma.game.module.LuckyBallDrawer;
+import idv.kuma.game.module.Module;
 import idv.kuma.game.vo.Parameters;
 import idv.kuma.game.vo.User;
 import org.joda.time.DateTime;
@@ -20,28 +21,12 @@ public class GameEventHandler {
 
         int returnCode;
 
+        Module module = user.getModule();
+
         try {
             switch (action) {
                 case "INIT": {
-
-                    if ("DICE".equals(user.getGameType())) {
-
-                        if (user.isInitialized()) {
-                            throw new GamePlayRuntimeException(6);
-                        } else {
-                            user.setInitialized(true);
-                        }
-
-                    } else { // POKER
-
-                        if (user.isInitialized()) {
-                            throw new GamePlayRuntimeException(6);
-                        } else {
-                            user.setInitialized(true);
-                        }
-
-                    }
-
+                    module.doInit();
                 }
                 break;
                 case "SPIN": {

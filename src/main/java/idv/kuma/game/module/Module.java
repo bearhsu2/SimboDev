@@ -1,4 +1,10 @@
 package idv.kuma.game.module;
 
-public class Module {
+public interface Module {
+
+    void doInit();
+
+    void doSpin();
+
+    void doLuckyBall();
 }
