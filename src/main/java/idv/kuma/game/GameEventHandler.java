@@ -20,13 +20,17 @@ public class GameEventHandler {
 
         try {
             doAction(module, parameters);
-            return new Response(ReturnCode.OK.getValue(), "balance: " + user.getBalance());
+            return new Response(ReturnCode.OK.getValue(), composeBalanceMessage(user.getBalance()));
         } catch (GamePlayRuntimeException gpre) {
             return handlePreDefinedRuntimeException(gpre);
         } catch (Exception e) {
             return handleUnknownException(e);
         }
 
+    }
+
+    private String composeBalanceMessage(double balance){
+        return "balance: " + balance;
     }
 
     private void doAction(Module module, Parameters parameters) {
