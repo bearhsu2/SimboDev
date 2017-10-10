@@ -15,44 +15,48 @@ public class GameEventHandler {
 
     public Response handleClientRequest(User user, String paramStr) {
 
+        Module module = user.getModule();
         Parameters parameters = GSON.fromJson(paramStr, Parameters.class);
 
-        String action = parameters.getAction();
-        double bet = parameters.getBet();
-
-        Module module = user.getModule();
-
         try {
-            switch (action) {
-                case "INIT": {
-                    module.doInit();
-                }
-                break;
-                case "SPIN": {
-                    module.doSpin(bet);
-                }
-                break;
-                case "LUCKY-BALL": {
-                    module.doLuckyBall(bet);
-                }
-                break;
-                default:
-                    // unknown action
-                    throw new GamePlayRuntimeException(ReturnCode.UNKNOWN_ACTION);
-            }
+            doAction(module, parameters);
             return new Response(ReturnCode.OK.getValue(), "balance: " + user.getBalance());
+        } catch (GamePlayRuntimeException gpre) {
+            return handlePreDefinedRuntimeException(gpre);
         } catch (Exception e) {
-            return handleException(e);
+            return handleUnknownException(e);
         }
 
     }
 
-    private Response handleException(Exception e) {
-        if (e instanceof GamePlayRuntimeException)
-            return new Response(((GamePlayRuntimeException) e).getReturnCode().getValue(), "Internal Error");
+    private void doAction(Module module, Parameters parameters) {
 
+        String action = parameters.getAction();
+
+        switch (action) {
+            case "INIT":
+                module.doInit();
+                break;
+            case "SPIN":
+                module.doSpin(parameters.getBet());
+                break;
+            case "LUCKY-BALL":
+                module.doLuckyBall(parameters.getBet());
+                break;
+            default:
+                // unknown action
+                throw new GamePlayRuntimeException(ReturnCode.UNKNOWN_ACTION);
+        }
+
+    }
+
+    private Response handlePreDefinedRuntimeException(GamePlayRuntimeException gpre) {
+        return new Response(gpre.getReturnCode().getValue(), "Internal Error");
+
+    }
+
+    private Response handleUnknownException(Exception e) {
         return new Response(ReturnCode.UNKNOWN_ERROR.getValue(), "Unknown Error");
-
     }
 
 }
