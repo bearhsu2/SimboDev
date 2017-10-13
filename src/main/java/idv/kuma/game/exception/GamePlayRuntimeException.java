@@ -1,25 +1,17 @@
 package idv.kuma.game.exception;
 
+import idv.kuma.game.code.ReturnCode;
+
 public class GamePlayRuntimeException extends RuntimeException {
 
+    ReturnCode returnCode;
 
-    // 6: initialized twice
-    // 1: uninitialized play
-    // 2: insufficient balance
-    // 3: unsupported operation
-    // 4: bet not positive
-    // 5: unknown action: can only be: "INIT", "SPIN", or "LUCKY-BALL"
-    int errorCode;
-
-    public GamePlayRuntimeException(int errorCode) {
-        this.errorCode = errorCode;
+    public GamePlayRuntimeException(ReturnCode returnCode) {
+        this.returnCode = returnCode;
     }
 
-    public int getErrorCode() {
-        return errorCode;
+    public ReturnCode getReturnCode() {
+        return returnCode;
     }
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
-    }
 }
