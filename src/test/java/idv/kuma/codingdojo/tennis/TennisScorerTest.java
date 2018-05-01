@@ -1,10 +1,8 @@
-package idv.kuma.tennis;
+package idv.kuma.codingdojo.tennis;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class TennisScorerTest {
 
@@ -20,5 +18,6 @@ public class TennisScorerTest {
 
     @Test
     public void AtBeginning_AllZeros() throws Exception {
+        // your test here
     }
 }
