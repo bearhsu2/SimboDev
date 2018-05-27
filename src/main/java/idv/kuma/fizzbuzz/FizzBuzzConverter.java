@@ -4,6 +4,6 @@ public class FizzBuzzConverter {
 
     public String convert(int i) {
 
-        return "";
+        return "1";
     }
 }
