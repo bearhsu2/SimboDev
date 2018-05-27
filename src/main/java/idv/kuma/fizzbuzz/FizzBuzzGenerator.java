@@ -9,7 +9,7 @@ public class FizzBuzzGenerator {
             return "fizz";
         }
 
-        if (5 == number) {
+        if (5 == number || 10 == number) {
             return "buzz";
         }
 

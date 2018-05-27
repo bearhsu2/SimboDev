@@ -46,6 +46,14 @@ public class FizzBuzzGeneratorTest {
         runAndCheck(6, "fizz");
     }
 
+    @Test
+    public void Test_10_buzz() {
+        makeFizzBuzzGenerator();
+
+        runAndCheck(10, "buzz");
+    }
+
+
 
     private void makeFizzBuzzGenerator() {
         fizzBuzzGenerator =  new FizzBuzzGenerator();
