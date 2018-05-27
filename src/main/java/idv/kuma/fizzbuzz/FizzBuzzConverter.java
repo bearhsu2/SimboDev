@@ -8,6 +8,10 @@ public class FizzBuzzConverter {
             return "fizz";
         }
 
+        if (5 == number) {
+            return "buzz";
+        }
+
         return String.valueOf(number);
 
     }
