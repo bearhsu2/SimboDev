@@ -8,9 +8,7 @@ public class FizzBuzzGenerator {
 
         StringBuilder sb = new StringBuilder();
 
-        if (shouldPut(number, 3)) {
-            sb.append("fizz");
-        }
+        sb.append(tryAndPut(number));
 
         if (shouldPut(number, 5)) {
             sb.append("buzz");
@@ -23,6 +21,15 @@ public class FizzBuzzGenerator {
         return sb.toString();
 
 
+    }
+
+    private StringBuilder tryAndPut(int number) {
+
+        if (shouldPut(number, 3)) {
+            return new StringBuilder().append("fizz");
+        } else {
+            return new StringBuilder();
+        }
     }
 
     private boolean shouldPut(int number, int i) {
