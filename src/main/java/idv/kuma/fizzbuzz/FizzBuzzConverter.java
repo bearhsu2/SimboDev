@@ -4,6 +4,10 @@ public class FizzBuzzConverter {
 
     public String convert(int number) {
 
+        if (isDividable(number, 3) && isDividable(number, 5)) {
+            return "fizzbuzz";
+        }
+
         if (isDividable(number, 3)){
             return "fizz";
         }
