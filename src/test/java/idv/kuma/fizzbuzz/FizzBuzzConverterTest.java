@@ -17,14 +17,26 @@ public class FizzBuzzConverterTest {
     }
 
     @Test
-    public void OneElement_1() throws Exception {
+    public void OneElement_1_1() throws Exception {
 
         FizzBuzzConverter converter = new FizzBuzzConverter();
 
 
-        String acutal = converter.convert(1);
+        String actual = converter.convert(1);
 
 
-        Assert.assertEquals("1",acutal);
+        Assert.assertEquals("1", actual);
+    }
+
+    @Test
+    public void OneElement_3_fizz() throws Exception {
+
+        FizzBuzzConverter converter = new FizzBuzzConverter();
+
+
+        String actual = converter.convert(3);
+
+
+        Assert.assertEquals("fizz", actual);
     }
 }
