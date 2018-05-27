@@ -5,7 +5,7 @@ public class FizzBuzzGenerator {
 
     public String generate(int number) {
 
-        if (3 == number) {
+        if (isDivisible(number)) {
             return "fizz";
         }
 
@@ -15,5 +15,9 @@ public class FizzBuzzGenerator {
 
         return String.valueOf(number);
 
+    }
+
+    private boolean isDivisible(int number) {
+        return 0 == number % 3;
     }
 }
