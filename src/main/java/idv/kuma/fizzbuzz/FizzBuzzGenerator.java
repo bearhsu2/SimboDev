@@ -5,11 +5,11 @@ public class FizzBuzzGenerator {
 
     public String generate(int number) {
 
-        if (isDivisible(number)) {
+        if (isDivisible5(number, 3)) {
             return "fizz";
         }
 
-        if (isDiviisble5(number)) {
+        if (isDivisible5(number, 5)) {
             return "buzz";
         }
 
@@ -17,11 +17,8 @@ public class FizzBuzzGenerator {
 
     }
 
-    private boolean isDiviisble5(int number) {
-        return 0 == number % 5;
+    private boolean isDivisible5(int dividend, int divisor) {
+        return 0 == dividend % divisor;
     }
 
-    private boolean isDivisible(int number) {
-        return 0 == number % 3;
-    }
 }
