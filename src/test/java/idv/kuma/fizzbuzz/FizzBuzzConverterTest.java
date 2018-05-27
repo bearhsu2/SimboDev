@@ -24,11 +24,16 @@ public class FizzBuzzConverterTest {
 
     @Test
     public void OneElement_1_1() throws Exception {
-
         makeConverter();
 
-
         runAndCheck("1", 1);
+    }
+
+    @Test
+    public void OneElement_2_2() throws Exception {
+        makeConverter();
+
+        runAndCheck("2", 2);
     }
 
 
@@ -36,13 +41,10 @@ public class FizzBuzzConverterTest {
     public void OneElement_3_fizz() throws Exception {
         makeConverter();
 
-
         runAndCheck("fizz", 3);
     }
 
     private void runAndCheck(String expected, int number) {
-
-
         Assert.assertEquals(expected, converter.convert(number));
     }
 

@@ -2,12 +2,13 @@ package idv.kuma.fizzbuzz;
 
 public class FizzBuzzConverter {
 
-    public String convert(int i) {
+    public String convert(int number) {
 
-        if (3 == i){
+        if (3 == number){
             return "fizz";
         }
 
-        return "1";
+        return String.valueOf(number);
+
     }
 }
