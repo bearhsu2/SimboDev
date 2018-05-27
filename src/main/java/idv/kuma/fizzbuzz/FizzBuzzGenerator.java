@@ -12,11 +12,8 @@ public class FizzBuzzGenerator {
 
         sb.append(tryAndPut(number, 5, "buzz"));
 
-        if (0 == sb.length()) {
-            sb.append(number);
-        }
 
-        return sb.toString();
+        return (0 == sb.length() ? sb.append(number) : sb).toString();
 
 
     }
