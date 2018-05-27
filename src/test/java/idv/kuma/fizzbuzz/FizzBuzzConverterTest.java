@@ -8,35 +8,45 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FizzBuzzConverterTest {
+
+    private FizzBuzzConverter converter;
+
     @Before
     public void setUp() throws Exception {
+
     }
 
     @After
     public void tearDown() throws Exception {
     }
 
+
+
     @Test
     public void OneElement_1_1() throws Exception {
 
-        FizzBuzzConverter converter = new FizzBuzzConverter();
+        makeConverter();
 
 
-        String actual = converter.convert(1);
-
-
-        Assert.assertEquals("1", actual);
+        runAndCheck("1", 1);
     }
+
 
     @Test
     public void OneElement_3_fizz() throws Exception {
-
-        FizzBuzzConverter converter = new FizzBuzzConverter();
-
-
-        String actual = converter.convert(3);
+        makeConverter();
 
 
-        Assert.assertEquals("fizz", actual);
+        runAndCheck("fizz", 3);
+    }
+
+    private void runAndCheck(String expected, int number) {
+
+
+        Assert.assertEquals(expected, converter.convert(number));
+    }
+
+    private void makeConverter() {
+        converter = new FizzBuzzConverter();
     }
 }
