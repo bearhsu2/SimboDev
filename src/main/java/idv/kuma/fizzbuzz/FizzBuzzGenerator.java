@@ -10,9 +10,7 @@ public class FizzBuzzGenerator {
 
         sb.append(tryAndPut(number));
 
-        if (shouldPut(number, 5)) {
-            sb.append("buzz");
-        }
+        sb.append(tryAndPut5(number));
 
         if (0 == sb.length()) {
             sb.append(number);
@@ -21,6 +19,14 @@ public class FizzBuzzGenerator {
         return sb.toString();
 
 
+    }
+
+    private StringBuilder tryAndPut5(int number) {
+        if (shouldPut(number, 5)) {
+            return new StringBuilder().append("buzz");
+        } else {
+            return new StringBuilder();
+        }
     }
 
     private StringBuilder tryAndPut(int number) {
