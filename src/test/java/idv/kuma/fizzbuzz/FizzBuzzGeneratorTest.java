@@ -5,21 +5,34 @@ import org.junit.Test;
 
 public class FizzBuzzGeneratorTest {
 
+    private FizzBuzzGenerator fizzBuzzGenerator;
+
     @Test
     public void Test_1_1() {
-        FizzBuzzGenerator fizzBuzzGenerator = new FizzBuzzGenerator();
 
-        String actual = fizzBuzzGenerator.generate(1);
+        makeFizzBuzzGenerator();
 
-        Assert.assertEquals("1", actual);
+        runAndCheck(1, "1");
     }
+
 
     @Test
     public void Test_2_2() {
-        FizzBuzzGenerator fizzBuzzGenerator = new FizzBuzzGenerator();
 
-        String actual = fizzBuzzGenerator.generate(2);
+        makeFizzBuzzGenerator();
 
-        Assert.assertEquals("2", actual);
+
+        runAndCheck(2, "2");
     }
+
+    private void makeFizzBuzzGenerator() {
+        fizzBuzzGenerator =  new FizzBuzzGenerator();
+    }
+
+    private void runAndCheck(int number, String expect) {
+        String actual = fizzBuzzGenerator.generate(number);
+
+        Assert.assertEquals(expect, actual);
+    }
+
 }
