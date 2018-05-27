@@ -4,19 +4,17 @@ public class FizzBuzzConverter {
 
     public String convert(int number) {
 
-        if (isDividable(number, 3) && isDividable(number, 5)) {
-            return "fizzbuzz";
-        }
+        StringBuilder result = new StringBuilder();
 
-        if (isDividable(number, 3)){
-            return "fizz";
+        if (isDividable(number , 3)) {
+            result.append("fizz");
         }
 
         if (isDividable(number, 5)) {
-            return "buzz";
+            result.append("buzz");
         }
-
-        return String.valueOf(number);
+        
+        return 0 == result.length() ? String.valueOf(number) : result.toString();
 
     }
 
