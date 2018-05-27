@@ -4,6 +4,11 @@ public class FizzBuzzGenerator {
 
 
     public String generate(int i) {
-        return "1";
+        if (1 == i) {
+            return "1";
+        } else {
+            return "2";
+        }
+
     }
 }

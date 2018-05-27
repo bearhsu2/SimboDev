@@ -13,4 +13,13 @@ public class FizzBuzzGeneratorTest {
 
         Assert.assertEquals("1", actual);
     }
+
+    @Test
+    public void Test_2_2() {
+        FizzBuzzGenerator fizzBuzzGenerator = new FizzBuzzGenerator();
+
+        String actual = fizzBuzzGenerator.generate(2);
+
+        Assert.assertEquals("2", actual);
+    }
 }
