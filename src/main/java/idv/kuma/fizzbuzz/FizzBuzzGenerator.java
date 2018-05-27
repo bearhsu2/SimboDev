@@ -5,13 +5,23 @@ public class FizzBuzzGenerator {
 
     public String generate(int number) {
 
-        if (shouldPut(number, 15)) return "fizzbuzz";
 
-        if (shouldPut(number, 3)) return "fizz";
+        StringBuilder sb = new StringBuilder();
 
-        if (shouldPut(number, 5)) return "buzz";
+        if (shouldPut(number, 3)) {
+            sb.append("fizz");
+        }
 
-        return String.valueOf(number);
+        if (shouldPut(number, 5)) {
+            sb.append("buzz");
+        }
+
+        if (0 == sb.length()) {
+            sb.append(number);
+        }
+
+        return sb.toString();
+
 
     }
 
