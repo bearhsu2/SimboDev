@@ -9,12 +9,16 @@ public class FizzBuzzGenerator {
             return "fizz";
         }
 
-        if (5 == number || 10 == number) {
+        if (isDiviisble5(number)) {
             return "buzz";
         }
 
         return String.valueOf(number);
 
+    }
+
+    private boolean isDiviisble5(int number) {
+        return 0 == number % 5;
     }
 
     private boolean isDivisible(int number) {
