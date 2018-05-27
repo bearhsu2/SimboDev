@@ -58,6 +58,14 @@ public class FizzBuzzConverterTest {
         runAndCheck("fizz", 6);
     }
 
+    @Test
+    public void OneElement_10_buzz() throws Exception {
+        makeConverter();
+
+        runAndCheck("buzz", 10);
+    }
+
+
     private void runAndCheck(String expected, int number) {
         Assert.assertEquals(expected, converter.convert(number));
     }

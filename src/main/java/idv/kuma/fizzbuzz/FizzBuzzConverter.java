@@ -8,7 +8,7 @@ public class FizzBuzzConverter {
             return "fizz";
         }
 
-        if (5 == number) {
+        if (0 == number % 5) {
             return "buzz";
         }
 
