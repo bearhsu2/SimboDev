@@ -13,8 +13,12 @@ public class FizzBuzzConverter {
         if (isDividable(number, 5)) {
             result.append("buzz");
         }
+
+        if (0 == result.length()) {
+            result.append(number);
+        }
         
-        return 0 == result.length() ? String.valueOf(number) : result.toString();
+        return result.toString();
 
     }
 
