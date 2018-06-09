@@ -6,26 +6,17 @@ public class FizzBuzzGenerator {
     public String generate(int number) {
 
 
-        StringBuilder sb = new StringBuilder();
+        if (number % 15 == 0){
+            return "fizzbuzz";
+        } else if (number % 3 == 0){
+            return "fizz";
+        } else if (number % 5 == 0){
+            return "buzz";
+        }
 
-        sb.append(tryDivisibleAndPut(number, 3, "fizz"));
-
-        sb.append(tryDivisibleAndPut(number, 5, "buzz"));
-
-        return (0 == sb.length() ? sb.append(number) : sb).toString();
-
-
-    }
-
-    private StringBuilder tryDivisibleAndPut(int divident, int divisor, String keyword) {
-
-        return new StringBuilder().append(isDivisible(divident, divisor) ? keyword : "");
+        return "" + number;
 
     }
 
-
-    private boolean isDivisible(int dividend, int divisor) {
-        return 0 == dividend % divisor;
-    }
 
 }
