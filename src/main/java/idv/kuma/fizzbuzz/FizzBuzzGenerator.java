@@ -20,6 +20,6 @@ public class FizzBuzzGenerator {
     }
 
     private boolean isFizz(int i) {
-        return 3 == i;
+        return 0 == i % 3;
     }
 }
