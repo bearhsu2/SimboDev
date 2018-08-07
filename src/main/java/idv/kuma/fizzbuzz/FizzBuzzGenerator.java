@@ -4,21 +4,17 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
-        if (isDivided(i,3) &&
-                isDivided(i, 5)) {
-            return "fizzbuzz";
-        }
-
+        StringBuilder sb = new StringBuilder();
 
         if (isFizz(i)) {
-            return "fizz";
+            sb.append("fizz");
         }
 
         if (isBuzz(i)) {
-            return "buzz";
+            sb.append("buzz");
         }
 
-        return "" + i;
+        return 0 == sb.length() ? sb.append(i).toString() : sb.toString();
     }
 
     private boolean isBuzz(int i) {
