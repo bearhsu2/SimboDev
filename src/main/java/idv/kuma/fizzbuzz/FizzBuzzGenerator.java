@@ -16,10 +16,14 @@ public class FizzBuzzGenerator {
     }
 
     private boolean isBuzz(int i) {
-        return 0 == i % 5;
+        return isDivided(i, 5);
+    }
+
+    private boolean isDivided(int dividend, int dividistor) {
+        return 0 == dividend % dividistor;
     }
 
     private boolean isFizz(int i) {
-        return 0 == i % 3;
+        return isDivided(i, 3);
     }
 }
