@@ -48,6 +48,11 @@ public class FizzBuzzGeneratorTest {
 
     }
 
+    @Test
+    public void Test_15_fizzbuzz() {
+
+        runAndCheck("fizzbuzz", 15);
+    }
 
     private void runAndCheck(String fizz, int i) {
         Assert.assertEquals(fizz, new FizzBuzzGenerator().generate(i));

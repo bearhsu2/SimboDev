@@ -4,6 +4,12 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
+        if (isDivided(i,3) &&
+                isDivided(i, 5)) {
+            return "fizzbuzz";
+        }
+
+
         if (isFizz(i)) {
             return "fizz";
         }
