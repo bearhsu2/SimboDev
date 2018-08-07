@@ -24,6 +24,11 @@ public class FizzBuzzGeneratorTest {
 
     }
 
+    @Test
+    public void Test_3_fizz() {
 
+        FizzBuzzGenerator generator = new FizzBuzzGenerator();
 
+        Assert.assertEquals("fizz", generator.generate(3));
+    }
 }
