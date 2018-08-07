@@ -10,7 +10,11 @@ public class FizzBuzzGenerator {
 
         sb.append(isDivided(i, 5, "buzz"));
 
-        return 0 == sb.length() ? sb.append(i).toString() : sb.toString();
+        return isEmpty(sb.length()) ? sb.append(i).toString() : sb.toString();
+    }
+
+    private boolean isEmpty(int length) {
+        return 0 == length;
     }
 
     private String isDivided(int dividend, int dividistor, String value) {
