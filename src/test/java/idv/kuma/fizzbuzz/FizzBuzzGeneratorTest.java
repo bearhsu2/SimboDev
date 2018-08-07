@@ -9,26 +9,26 @@ public class FizzBuzzGeneratorTest {
     @Test
     public void Test_1_1() {
 
-        FizzBuzzGenerator generator = new FizzBuzzGenerator();
-
-        Assert.assertEquals("1", generator.generate(1));
+        runAndCheck("1", 1);
 
     }
 
     @Test
     public void Test_2_2() {
 
-        FizzBuzzGenerator generator = new FizzBuzzGenerator();
-
-        Assert.assertEquals("2", generator.generate(2));
+        runAndCheck("2", 2);
 
     }
 
     @Test
     public void Test_3_fizz() {
 
-        FizzBuzzGenerator generator = new FizzBuzzGenerator();
-
-        Assert.assertEquals("fizz", generator.generate(3));
+        runAndCheck("fizz", 3);
     }
+
+    private void runAndCheck(String fizz, int i) {
+        Assert.assertEquals(fizz, new FizzBuzzGenerator().generate(i));
+    }
+
+
 }
