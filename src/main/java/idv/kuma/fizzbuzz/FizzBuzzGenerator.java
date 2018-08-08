@@ -4,14 +4,22 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
-        if ( 3 == i ) {
+        if (isFizz(i, 3)) {
             return "fizz";
         }
 
-        if ( 5 == i ) {
+        if (isBuzz(i, 5)) {
             return "buzz";
         }
 
         return String.valueOf(i);
+    }
+
+    private boolean isBuzz(int i, int i2) {
+        return i2 == i;
+    }
+
+    private boolean isFizz(int i, int i2) {
+        return i2 == i;
     }
 }
