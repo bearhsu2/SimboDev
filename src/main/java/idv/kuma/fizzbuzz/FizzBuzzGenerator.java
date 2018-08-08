@@ -7,16 +7,20 @@ public class FizzBuzzGenerator {
 
         StringBuilder sb = new StringBuilder();
 
-        if (isDivided(i, 3)) {
-            sb.append("fizz");
-        }
+        sb.append(isDivided(i, 3, "fizz"));
 
-        if (isDivided(i, 5)) {
-            sb.append("buzz");
-        }
+        sb.append(isDivided(i, 5, "buzz"));
 
         return 0 == sb.length() ? sb.append(i).toString() : sb.toString();
 
+    }
+
+    private String isDivided(int dividend, int dividentor, String value) {
+        if (isDivided(dividend, dividentor)) {
+            return value;
+        }
+
+        return "";
     }
 
     private boolean isDivided(int dividend, int dividentor) {
