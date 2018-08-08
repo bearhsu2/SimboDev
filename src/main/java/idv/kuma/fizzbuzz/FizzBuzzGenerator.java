@@ -5,7 +5,9 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
-
+        if (isFizz(i, 3) && isBuzz(i, 5)) {
+            return "fizzbuzz";
+        }
 
         if (isFizz(i, 3)) {
             return "fizz";
