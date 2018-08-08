@@ -7,19 +7,23 @@ public class FizzBuzzGenerator {
 
         StringBuilder sb  = new StringBuilder();
 
-        if (isDivided(i, 3)) {
-            sb.append("fizz");
-        }
+        sb.append(isDivisible(i, 3, "fizz"));
 
-        if (isDivided(i, 5)) {
-            sb.append("buzz");
-        }
+        sb.append(isDivisible(i, 5, "buzz"));
 
         if ( 0 == sb.length() ) {
             sb.append(i);
         }
 
         return sb.toString();
+    }
+
+    private String isDivisible(int i, int i2, String fizz) {
+        if (isDivided(i, i2)) {
+            return fizz;
+        }
+
+        return "";
     }
 
     private boolean isDivided(int i, int i2) {
