@@ -6,21 +6,21 @@ public class FizzBuzzGenerator {
 
         StringBuilder sb = new StringBuilder();
 
+        sb.append(isDivisible(i, 3, "fizz"));
 
-        if (isDivisible(i, 3)) {
-            sb.append("fizz");
-        }
+        sb.append(isDivisible(i, 5, "buzz"));
 
-        if (isDivisible(i, 5)) {
-            sb.append("buzz");
-        }
-
-        if ( 0 == sb.length() ) {
-            sb.append(i);
-        }
-
-        return sb.toString();
+        return 0 == sb.length() ? sb.append(i).toString() : sb.toString();
     }
+
+    private String isDivisible(int i, int i2, String fizz) {
+        if (isDivisible(i, i2)) {
+            return fizz;
+        }
+
+        return "";
+    }
+
 
     private boolean isDivisible(int dividend, int divisor) {
         return 0 == dividend % divisor;
