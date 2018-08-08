@@ -4,6 +4,9 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
+        if (isDivisible(i , 3) && isDivisible(i, 5)) {
+            return "fizzbuzz";
+        }
 
 
         if (isDivisible(i, 3)) {

@@ -50,7 +50,7 @@ public class FizzBuzzGeneratorTest {
     @Test
     public void Test_15_fizzubxx() {
 
-        runAndCheck("fizzbuzz", 10);
+        runAndCheck("fizzbuzz", 15);
     }
 
     private void runAndCheck(String fizz, int i) {
