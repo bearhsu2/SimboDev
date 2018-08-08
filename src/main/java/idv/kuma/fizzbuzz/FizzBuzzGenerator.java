@@ -10,7 +10,11 @@ public class FizzBuzzGenerator {
 
         sb.append(isDivisible(i, 5, "buzz"));
 
-        return 0 == sb.length() ? sb.append(i).toString() : sb.toString();
+        return isEmptyString(sb.length()) ? sb.append(i).toString() : sb.toString();
+    }
+
+    private boolean isEmptyString(int length) {
+        return 0 == length;
     }
 
     private String isDivisible(int i, int i2, String fizz) {
