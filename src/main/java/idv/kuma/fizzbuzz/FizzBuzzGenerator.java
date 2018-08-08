@@ -15,11 +15,16 @@ public class FizzBuzzGenerator {
         return String.valueOf(i);
     }
 
-    private boolean isBuzz(int i, int i2) {
-        return i2 == i;
+    private boolean isDivisiable(int i, int i2) {
+        return 0 == i % i2;
     }
 
+    private boolean isBuzz(int dividend, int divisor) {
+        return isDivisiable(dividend, divisor);
+    }
+
+
     private boolean isFizz(int i, int i2) {
-        return 0 == i % i2;
+        return isDivisiable(i, i2);
     }
 }
