@@ -5,19 +5,21 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
-        if (isDivided(i,3) && isDivided(i , 5)) {
-            return "fizzbuzz";
-        }
+        StringBuilder sb = new StringBuilder();
 
         if (isDivided(i, 3)) {
-            return "fizz";
+            sb.append("fizz");
         }
 
         if (isDivided(i, 5)) {
-            return "buzz";
+            sb.append("buzz");
         }
 
-        return "" + i;
+        if (0 == sb.length()) {
+            sb.append(i);
+        }
+
+        return sb.toString();
     }
 
     private boolean isDivided(int dividend, int dividentor) {
