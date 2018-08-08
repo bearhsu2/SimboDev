@@ -4,20 +4,22 @@ public class FizzBuzzGenerator {
 
     public String generate(int i) {
 
-        if (isDivisible(i , 3) && isDivisible(i, 5)) {
-            return "fizzbuzz";
-        }
+        StringBuilder sb = new StringBuilder();
 
 
         if (isDivisible(i, 3)) {
-            return "fizz";
+            sb.append("fizz");
         }
 
         if (isDivisible(i, 5)) {
-            return "buzz";
+            sb.append("buzz");
         }
 
-        return String.valueOf(i);
+        if ( 0 == sb.length() ) {
+            sb.append(i);
+        }
+
+        return sb.toString();
     }
 
     private boolean isDivisible(int dividend, int divisor) {
