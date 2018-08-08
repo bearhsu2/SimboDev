@@ -15,6 +15,15 @@ public class FizzBuzzGeneratorTest {
 
     }
 
+    @Test
+    public void Test_2_2() {
+
+        FizzBuzzGenerator generator = new FizzBuzzGenerator();
+
+        Assert.assertEquals("2", generator.generate(2));
+
+    }
+
 
 
 }
