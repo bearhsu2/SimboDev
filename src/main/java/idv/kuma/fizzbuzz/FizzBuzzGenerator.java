@@ -4,6 +4,6 @@ public class FizzBuzzGenerator {
 
 
     public String generate(int i) {
-        return "1";
+        return "" + i;
     }
 }
