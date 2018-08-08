@@ -34,6 +34,8 @@ public class FizzBuzzGeneratorTest {
         runAndCheck("buzz", 5);
     }
 
+
+
     private void runAndCheck(String fizz, int i) {
         Assert.assertEquals(fizz, new FizzBuzzGenerator().generate(i));
     }
