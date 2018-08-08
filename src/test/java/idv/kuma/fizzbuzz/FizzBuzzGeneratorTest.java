@@ -44,6 +44,13 @@ public class FizzBuzzGeneratorTest {
     public void Test_10_buzz() {
 
         runAndCheck("buzz", 10);
+
+    }
+
+    @Test
+    public void Test_15_fizzubxx() {
+
+        runAndCheck("fizzbuzz", 10);
     }
 
     private void runAndCheck(String fizz, int i) {
