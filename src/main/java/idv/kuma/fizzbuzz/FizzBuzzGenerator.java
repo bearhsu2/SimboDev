@@ -8,7 +8,11 @@ public class FizzBuzzGenerator {
         if ( 3 == i ) {
             return "fizz";
         }
-        
+
+        if ( 5 == i ) {
+            return "buzz";
+        }
+
         return "" + i;
     }
 }
