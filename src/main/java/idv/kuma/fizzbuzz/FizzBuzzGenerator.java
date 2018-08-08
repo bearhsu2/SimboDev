@@ -15,11 +15,8 @@ public class FizzBuzzGenerator {
             sb.append("buzz");
         }
 
-        if (0 == sb.length()) {
-            sb.append(i);
-        }
+        return 0 == sb.length() ? sb.append(i).toString() : sb.toString();
 
-        return sb.toString();
     }
 
     private boolean isDivided(int dividend, int dividentor) {
