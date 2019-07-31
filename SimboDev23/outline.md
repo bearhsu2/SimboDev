@@ -1,0 +1,33 @@
+# SimboDev 22 TDD與持續重構系列
+
+[![N|Solid](http://www.simbo.com.tw/images/logo.png)](http://www.simbo.com.tw/)
+
+# 內容如下：
+
+  - TDD
+    - 你的TDD與我的有什麼不同
+    - TDD的真正用意
+    - TDD與scrum的對比
+  - 重構Legacy Code
+    -  你的TDD與我的有什麼不同
+    - 已經很有味道的code如何重構
+  - 持續重構
+    - 一邊TDD一邊重構
+    - 設計與重構
+
+# TDD
+
+  - Import a HTML file and watch it magically convert to Markdown
+  - Drag and drop images (requires your Dropbox account be linked)
+
+
+### Tech
+
+Dillinger uses a number of open source projects to work properly:
+
+* [AngularJS] - HTML enhanced for web apps!
+* [Ace Editor] - awesome web-based text editor
+* [markdown-it] - Markdown parser done right. Fast and easy to extend.
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+* [node.js] - evented I/O for the backend
+* 
