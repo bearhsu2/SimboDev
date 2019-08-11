@@ -1,33 +1,24 @@
-# SimboDev 22 TDD與持續重構系列
+# SimboDev 22 高效率程序員入門三招
 
 [![N|Solid](http://www.simbo.com.tw/images/logo.png)](http://www.simbo.com.tw/)
 
-# 內容如下：
-
+# 包含內容：
   - TDD
-    - 你的TDD與我的有什麼不同
-    - TDD的真正用意
-    - TDD與scrum的對比
+    - TDD的真正目的
+    - TDD的正確姿勢
+    
+
+  - 實例化需求
+    - 實例化需求是什麼
+    - 實例化需求輔助TDD 
+    
+
   - 重構Legacy Code
-    -  你的TDD與我的有什麼不同
-    - 已經很有味道的code如何重構
-  - 持續重構
-    - 一邊TDD一邊重構
-    - 設計與重構
-
-# TDD
-
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
-
-
-### Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* 
+    - 舊有代碼如何重構
+    - 識別出程式碼的壞味道
+    
+ 
+# 流程：
+- Day 1
+- Day 2
+- Day 3
