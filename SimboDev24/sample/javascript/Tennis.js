@@ -12,11 +12,11 @@ class Tennis {
     }
 
     a() {
-        this.aScore += 1;
+        this.aScore ++;
     }
 
     b() {
-        this.bScore += 1;
+        this.bScore ++;
     }
 
     score() {
