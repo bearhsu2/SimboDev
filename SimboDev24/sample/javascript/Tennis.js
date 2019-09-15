@@ -6,7 +6,8 @@ scoreToPrintName.set(2, 'Thirty');
 scoreToPrintName.set(3, 'Forty');
 
 class Tennis {
-    constructor() {
+    constructor(aName) {
+        this.aName = aName;
         this.aScore = 0;
         this.bScore = 0;
     }
@@ -28,7 +29,7 @@ class Tennis {
         } else {
 
             if (Math.max(this.aScore, this.bScore) > 3) {
-                return 'Tom Adv.'
+                return this.aName + ' Adv.'
             } else {
 
                 return scoreToPrintName.get(this.aScore) + ' ' + scoreToPrintName.get(this.bScore);

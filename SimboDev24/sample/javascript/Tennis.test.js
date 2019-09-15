@@ -3,7 +3,7 @@ const Tennis = require('./Tennis');
 let tennis;
 
 beforeEach(() => {
-    tennis = new Tennis();
+    tennis = new Tennis('Tom');
 });
 
 test('When Initial Then Love All', () => {
