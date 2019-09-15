@@ -3,7 +3,7 @@ const Tennis = require('./Tennis');
 let tennis;
 
 beforeEach(() => {
-    tennis = new Tennis('Tom');
+    tennis = new Tennis('Tom', 'Joe');
 });
 
 test('When Initial Then Love All', () => {
@@ -44,20 +44,21 @@ test('When ab Then Fifteen All', () => {
     checkScore('Fifteen All');
 });
 
-function goDeuce() {
-    aScore(3);
-    bScore(3);
-}
-
 test('When aaabbb Then Deuce', () => {
     goDeuce();
     checkScore('Deuce');
 });
 
-test('When aaabbba Then Tom Adv.', () => {
+test('When aaabbba Then Player 1 Adv.', () => {
     goDeuce();
     aScore(1);
     checkScore('Tom Adv.');
+});
+
+test('When aaabbbb Then Player 2 Adv.', () => {
+    goDeuce();
+    bScore(1);
+    checkScore('Joe Adv.');
 });
 
 function checkScore(expected) {
@@ -76,3 +77,8 @@ function bScore(times) {
     }
 }
 
+
+function goDeuce() {
+    aScore(3);
+    bScore(3);
+}
