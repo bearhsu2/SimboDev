@@ -21,12 +21,14 @@ class Tennis {
 
     score() {
 
-        if (this.aScore > 0 || this.bScore > 0) {
+        if (this.aScore == this.bScore) {
+            return myMap.get(this.aScore) + ' All';
+        } else {
             return myMap.get(this.aScore) + ' ' + myMap.get(this.bScore);
+
+
         }
 
-
-        return 'Love All';
     }
 
 

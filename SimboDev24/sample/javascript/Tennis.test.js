@@ -37,6 +37,13 @@ test('When bb Then Love Thirty', () => {
     checkScore('Love Thirty')
 });
 
+
+test('When ab Then Fifteen All', () => {
+    aScore(1);
+    bScore(1);
+    checkScore('Fifteen All')
+});
+
 function checkScore(expected) {
     expect(tennis.score()).toBe(expected);
 }
