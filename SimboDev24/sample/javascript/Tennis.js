@@ -29,14 +29,12 @@ class Tennis {
                 : scoreToPrintName.get(this.aScore) + ' All';
         } else {
 
-            if (Math.max(this.aScore, this.bScore) > 3) {
+            if (this.afterDeuce()) {
 
-                if (this.aScore > this.bScore) {
+                return (this.aScore > this.bScore
+                    ? this.aName
+                    : this.bName) + ' Adv.';
 
-                    return this.aName + ' Adv.';
-                } else {
-                    return this.bName + ' Adv.';
-                }
             } else {
 
                 return scoreToPrintName.get(this.aScore) + ' ' + scoreToPrintName.get(this.bScore);
@@ -48,6 +46,9 @@ class Tennis {
     }
 
 
+    afterDeuce() {
+        return Math.max(this.aScore, this.bScore) > 3;
+    }
 }
 
 module.exports = Tennis;
