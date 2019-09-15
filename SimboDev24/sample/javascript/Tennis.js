@@ -33,13 +33,10 @@ class Tennis {
 
             if (this.afterDeuce()) {
 
+                return this.scoreDifferenceIsOne()
+                    ? this.getLeadingPlayer() + ' Adv.'
+                    : this.getLeadingPlayer() + ' Wins';
 
-
-                if (this.differenceIsOne()) {
-                    return this.getLeadingPlayer() + ' Adv.';
-                } else {
-                    return this.getLeadingPlayer() + ' Wins';
-                }
 
             } else {
 
@@ -52,7 +49,7 @@ class Tennis {
     }
 
 
-    differenceIsOne() {
+    scoreDifferenceIsOne() {
         return Math.abs(this.aScore - this.bScore) === 1;
     }
 
