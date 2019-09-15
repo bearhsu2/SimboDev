@@ -24,16 +24,25 @@ class Tennis {
     score() {
 
         if (this.sameScore()) {
+
             return this.aScore >= 3
                 ? 'Deuce'
                 : scoreToPrintName.get(this.aScore) + ' All';
+
         } else {
 
             if (this.afterDeuce()) {
 
-                return (this.aScore > this.bScore
-                    ? this.aName
-                    : this.bName) + ' Adv.';
+                if (Math.abs(this.aScore - this.bScore) === 1) {
+
+                    return (this.aScore > this.bScore
+                        ? this.aName
+                        : this.bName) + ' Adv.';
+                } else {
+                    return (this.aScore > this.bScore
+                        ? this.aName
+                        : this.bName) + ' Wins';
+                }
 
             } else {
 

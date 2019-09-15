@@ -61,6 +61,13 @@ test('When aaabbbb Then Player 2 Adv.', () => {
     checkScore('Joe Adv.');
 });
 
+
+test('When aaabbbaa Then Deuce.', () => {
+    goDeuce();
+    aScore(2);
+    checkScore('Tom Wins');
+});
+
 function checkScore(expected) {
     expect(tennis.score()).toBe(expected);
 }
