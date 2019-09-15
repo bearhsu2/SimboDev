@@ -34,14 +34,9 @@ class Tennis {
             if (this.afterDeuce()) {
 
                 if (Math.abs(this.aScore - this.bScore) === 1) {
-
-                    return (this.aScore > this.bScore
-                        ? this.aName
-                        : this.bName) + ' Adv.';
+                    return this.getLeadingPlayer() + ' Adv.';
                 } else {
-                    return (this.aScore > this.bScore
-                        ? this.aName
-                        : this.bName) + ' Wins';
+                    return this.getLeadingPlayer() + ' Wins';
                 }
 
             } else {
@@ -55,6 +50,11 @@ class Tennis {
     }
 
 
+    getLeadingPlayer() {
+        return this.aScore > this.bScore
+            ? this.aName
+            : this.bName;
+    }
 
     sameScore() {
         return this.aScore === this.bScore;

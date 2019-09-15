@@ -62,7 +62,7 @@ test('When aaabbbb Then Player 2 Adv.', () => {
 });
 
 
-test('When aaabbbaa Then Deuce.', () => {
+test('When aaabbbaa Then Player 1 Wins.', () => {
     goDeuce();
     aScore(2);
     checkScore('Tom Wins');
