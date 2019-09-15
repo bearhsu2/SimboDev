@@ -23,7 +23,7 @@ class Tennis {
 
     score() {
 
-        if (this.aScore === this.bScore) {
+        if (this.sameScore()) {
             return this.aScore >= 3
                 ? 'Deuce'
                 : scoreToPrintName.get(this.aScore) + ' All';
@@ -45,6 +45,11 @@ class Tennis {
 
     }
 
+
+
+    sameScore() {
+        return this.aScore === this.bScore;
+    }
 
     afterDeuce() {
         return Math.max(this.aScore, this.bScore) > 3;
