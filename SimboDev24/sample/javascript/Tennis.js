@@ -1,9 +1,9 @@
-const myMap = new Map();
+const scoreToPrintName = new Map();
 
-myMap.set(0, "Love");
-myMap.set(1, "Fifteen");
-myMap.set(2, 'Thirty');
-myMap.set(3, 'Forty');
+scoreToPrintName.set(0, "Love");
+scoreToPrintName.set(1, "Fifteen");
+scoreToPrintName.set(2, 'Thirty');
+scoreToPrintName.set(3, 'Forty');
 
 class Tennis {
     constructor() {
@@ -21,10 +21,10 @@ class Tennis {
 
     score() {
 
-        if (this.aScore == this.bScore) {
-            return myMap.get(this.aScore) + ' All';
+        if (this.aScore === this.bScore) {
+            return scoreToPrintName.get(this.aScore) + ' All';
         } else {
-            return myMap.get(this.aScore) + ' ' + myMap.get(this.bScore);
+            return scoreToPrintName.get(this.aScore) + ' ' + scoreToPrintName.get(this.bScore);
 
 
         }
