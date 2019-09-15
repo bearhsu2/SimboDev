@@ -28,13 +28,12 @@ test('When aaa Then Forty Love', () => {
 
 
 test('When b Then Love Fifteen', () => {
-    tennis.b()
+    bScore(1);
     checkScore('Love Fifteen')
 });
 
 test('When bb Then Love Thirty', () => {
-    tennis.b()
-    tennis.b()
+    bScore(2);
     checkScore('Love Thirty')
 });
 
@@ -45,6 +44,12 @@ function checkScore(expected) {
 function aScore(times) {
     for (let i = 0; i < times; i++) {
         tennis.a();
+    }
+}
+
+function bScore(times) {
+    for (let i = 0; i < times; i++) {
+        tennis.b();
     }
 }
 
