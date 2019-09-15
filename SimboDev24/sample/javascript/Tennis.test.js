@@ -13,35 +13,41 @@ test('When Initial Then Love All', () => {
 
 test('When a Then Fifteen Love', () => {
     aScore(1);
-    checkScore('Fifteen Love')
+    checkScore('Fifteen Love');
 });
 
 test('When aa Then Thirty Love', () => {
     aScore(2);
-    checkScore('Thirty Love')
+    checkScore('Thirty Love');
 });
 
 test('When aaa Then Forty Love', () => {
     aScore(3);
-    checkScore('Forty Love')
+    checkScore('Forty Love');
 });
 
 
 test('When b Then Love Fifteen', () => {
     bScore(1);
-    checkScore('Love Fifteen')
+    checkScore('Love Fifteen');
 });
 
 test('When bb Then Love Thirty', () => {
     bScore(2);
-    checkScore('Love Thirty')
+    checkScore('Love Thirty');
 });
 
 
 test('When ab Then Fifteen All', () => {
     aScore(1);
     bScore(1);
-    checkScore('Fifteen All')
+    checkScore('Fifteen All');
+});
+
+test('When aaabbb Then Deuce', () => {
+    aScore(3);
+    bScore(3);
+    checkScore('Deuce');
 });
 
 function checkScore(expected) {

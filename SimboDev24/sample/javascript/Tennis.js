@@ -12,17 +12,19 @@ class Tennis {
     }
 
     a() {
-        this.aScore ++;
+        this.aScore++;
     }
 
     b() {
-        this.bScore ++;
+        this.bScore++;
     }
 
     score() {
 
         if (this.aScore === this.bScore) {
-            return scoreToPrintName.get(this.aScore) + ' All';
+            return this.aScore >= 3
+                ? 'Deuce'
+                : scoreToPrintName.get(this.aScore) + ' All';
         } else {
             return scoreToPrintName.get(this.aScore) + ' ' + scoreToPrintName.get(this.bScore);
 
