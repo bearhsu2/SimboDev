@@ -2,6 +2,7 @@ const myMap = new Map();
 
 myMap.set(1, "Fifteen");
 myMap.set(2, 'Thirty');
+myMap.set(3, 'Forty');
 
 class Tennis {
     constructor() {

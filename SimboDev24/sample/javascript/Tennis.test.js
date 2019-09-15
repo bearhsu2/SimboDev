@@ -16,18 +16,23 @@ test('When a Then Fifteen Love', () => {
     checkScore('Fifteen Love')
 });
 
-function aScore(times) {
-    for (let i = 0; i < times; i++) {
-        tennis.a();
-    }
-}
-
 test('When aa Then Thirty Love', () => {
     aScore(2);
     checkScore('Thirty Love')
 });
 
+test('When aaa Then Forty Love', () => {
+    aScore(3);
+    checkScore('Forty Love')
+});
+
 function checkScore(expected) {
     expect(tennis.score()).toBe(expected);
+}
+
+function aScore(times) {
+    for (let i = 0; i < times; i++) {
+        tennis.a();
+    }
 }
 
