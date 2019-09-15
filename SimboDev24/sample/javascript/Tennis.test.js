@@ -1,6 +1,6 @@
 const Tennis = require('./Tennis');
 
-test('init', () => {
+test('When Initial Then Love All', () => {
 
     const tennis = new Tennis();
 
