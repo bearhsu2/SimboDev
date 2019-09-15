@@ -1,16 +1,18 @@
 const Tennis = require('./Tennis');
 
-test('When Initial Then Love All', () => {
+let tennis;
 
-    const tennis = new Tennis();
+beforeEach(() => {
+    tennis = new Tennis();
+});
+
+test('When Initial Then Love All', () => {
 
     expect(tennis.score()).toBe('Love All');
 });
 
 
 test('When a Then Fifteen Love', () => {
-
-    const tennis = new Tennis();
 
     tennis.a();
 
