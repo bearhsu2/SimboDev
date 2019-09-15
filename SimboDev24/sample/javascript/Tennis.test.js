@@ -44,15 +44,18 @@ test('When ab Then Fifteen All', () => {
     checkScore('Fifteen All');
 });
 
-test('When aaabbb Then Deuce', () => {
+function goDeuce() {
     aScore(3);
     bScore(3);
+}
+
+test('When aaabbb Then Deuce', () => {
+    goDeuce();
     checkScore('Deuce');
 });
 
 test('When aaabbba Then Tom Adv.', () => {
-    aScore(3);
-    bScore(3);
+    goDeuce();
     aScore(1);
     checkScore('Tom Adv.');
 });
