@@ -50,6 +50,13 @@ test('When aaabbb Then Deuce', () => {
     checkScore('Deuce');
 });
 
+test('When aaabbba Then Tom Adv.', () => {
+    aScore(3);
+    bScore(3);
+    aScore(1);
+    checkScore('Tom Adv.');
+});
+
 function checkScore(expected) {
     expect(tennis.score()).toBe(expected);
 }

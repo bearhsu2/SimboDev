@@ -26,7 +26,13 @@ class Tennis {
                 ? 'Deuce'
                 : scoreToPrintName.get(this.aScore) + ' All';
         } else {
-            return scoreToPrintName.get(this.aScore) + ' ' + scoreToPrintName.get(this.bScore);
+
+            if (Math.max(this.aScore, this.bScore) > 3) {
+                return 'Tom Adv.'
+            } else {
+
+                return scoreToPrintName.get(this.aScore) + ' ' + scoreToPrintName.get(this.bScore);
+            }
 
 
         }
