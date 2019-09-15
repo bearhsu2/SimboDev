@@ -1,6 +1,9 @@
+const myMap = new Map();
+
+myMap.set(1, "Fifteen");
+myMap.set(2, 'Thirty');
+
 class Tennis {
-
-
     constructor() {
         this.aScore = 0;
     }
@@ -12,11 +15,12 @@ class Tennis {
     score() {
 
         if (this.aScore > 0) {
-            return 'Fifteen Love';
+            return myMap.get(this.aScore) + ' Love';
         }
 
         return 'Love All';
     }
+
 
 }
 
