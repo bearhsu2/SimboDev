@@ -24,14 +24,13 @@ function Tennis() {
             return this.aHits >= 3
                 ? 'Deuce'
                 : hitsToScore.get(this.aHits) + ' All';
-
+        } else {
+            return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
         }
 
 
-        return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
-
-
     }
+
 
 }
 
