@@ -21,14 +21,12 @@ function Tennis() {
     this.score = function () {
 
         if (this.aHits === this.bHits) {
-
-                return hitsToScore.get(this.aHits) + ' All';
-
+            return hitsToScore.get(this.aHits) + ' All';
         }
 
-        if (this.aHits > 0 || this.bHits > 0) {
-            return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
-        }
+
+        return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
+
 
     }
 
