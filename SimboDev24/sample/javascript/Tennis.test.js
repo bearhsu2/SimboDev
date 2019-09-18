@@ -4,7 +4,7 @@ const Tennis = require('./Tennis');
 let tennis;
 
 beforeEach(() => {
-    tennis = new Tennis();
+    tennis = new Tennis('Tom');
 });
 
 test('When Initial Then Love All', () => {
@@ -56,10 +56,15 @@ test('When aabb Then Thirty All', () => {
 });
 
 test('When aaabbb Then Deuce', () => {
-
-
     makeDeuce();
     checkScore('Deuce');
+});
+
+
+test('When aaabbba A Adv', () => {
+    makeDeuce();
+    makeAHits(1);
+    checkScore('Tom Adv.');
 });
 
 function makeDeuce() {
