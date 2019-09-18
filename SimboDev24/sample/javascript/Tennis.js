@@ -21,7 +21,7 @@ function Tennis() {
 
         if (this.aHits > 0) {
             return hitsToScore.get(this.aHits) + ' Love';
-        } else if(this.bHits > 0 ){
+        } else if (this.bHits > 0) {
             return 'Love ' + hitsToScore.get(this.bHits);
 
         }
