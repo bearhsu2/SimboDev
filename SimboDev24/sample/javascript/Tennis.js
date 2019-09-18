@@ -23,6 +23,7 @@ function Tennis(aName, bName) {
 
     this.score = function () {
 
+
         if (this.aHits === this.bHits) {
             return this.aHits >= 3
                 ? 'Deuce'
@@ -31,9 +32,7 @@ function Tennis(aName, bName) {
 
             if (Math.max(this.aHits, this.bHits) > 3) {
 
-                return (this.aHits > this.bHits
-                    ? this.aName
-                    : this.bName) + ' Adv.';
+                return leadingPlayer.call(this) + ' Adv.';
 
             } else {
                 return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
@@ -46,5 +45,10 @@ function Tennis(aName, bName) {
 
 }
 
+function leadingPlayer() {
+    return this.aHits > this.bHits
+        ? this.aName
+        : this.bName;
+}
 
 module.exports = Tennis;
