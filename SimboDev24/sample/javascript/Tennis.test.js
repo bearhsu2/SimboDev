@@ -73,6 +73,12 @@ test('When aaabbbb Then B Adv', () => {
     checkScore('Joe Adv.');
 });
 
+test('When aaabbbaa Then A Wins', () => {
+    makeDeuce();
+    makeAHits(2);
+    checkScore('Tom Wins');
+});
+
 function makeDeuce() {
     makeAHits(3);
     makeBHits(3);
