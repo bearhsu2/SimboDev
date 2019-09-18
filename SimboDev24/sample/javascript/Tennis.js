@@ -2,8 +2,7 @@ function Tennis() {
 
 
     this.score = function () {
-        return '';
-
+        return 'Love All';
     }
 
 }
