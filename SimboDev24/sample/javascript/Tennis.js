@@ -22,11 +22,8 @@ function Tennis() {
 
         if (this.aHits === this.bHits) {
 
-            if (this.aHits === 0) {
-                return 'Love All';
-            } else {
                 return hitsToScore.get(this.aHits) + ' All';
-            }
+
         }
 
         if (this.aHits > 0 || this.bHits > 0) {
