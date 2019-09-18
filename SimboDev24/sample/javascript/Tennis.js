@@ -24,9 +24,8 @@ function Tennis() {
 
             if (this.aHits === 0) {
                 return 'Love All';
-
             } else {
-                return 'Fifteen All';
+                return hitsToScore.get(this.aHits) + ' All';
             }
         }
 
