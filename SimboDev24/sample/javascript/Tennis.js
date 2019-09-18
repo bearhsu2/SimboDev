@@ -21,11 +21,10 @@ function Tennis() {
     this.score = function () {
 
         if (this.aHits === this.bHits) {
-            if (this.aHits >= 3) {
-                return 'Deuce';
-            } else {
-                return hitsToScore.get(this.aHits) + ' All';
-            }
+            return this.aHits >= 3
+                ? 'Deuce'
+                : hitsToScore.get(this.aHits) + ' All';
+
         }
 
 
