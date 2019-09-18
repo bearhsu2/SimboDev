@@ -57,10 +57,16 @@ test('When aabb Then Thirty All', () => {
 
 test('When aaabbb Then Deuce', () => {
 
-    makeAHits(3);
-    makeBHits(3);
+
+    makeDeuce();
     checkScore('Deuce');
 });
+
+function makeDeuce() {
+    makeAHits(3);
+    makeBHits(3);
+
+}
 
 function makeAHits(times) {
     for (let i = 0; i < times; i++) {
