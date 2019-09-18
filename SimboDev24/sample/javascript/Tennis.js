@@ -5,9 +5,10 @@ hitsToScore.set(1, "Fifteen");
 hitsToScore.set(2, "Thirty");
 hitsToScore.set(3, "Forty");
 
-function Tennis(aName) {
+function Tennis(aName, bName) {
 
     this.aName = aName;
+    this.bName = bName;
 
     this.aHits = 0;
     this.bHits = 0;
@@ -29,7 +30,10 @@ function Tennis(aName) {
         } else {
 
             if (this.aHits > 3) {
-                return aName + ' Adv.';
+                return this.aName + ' Adv.';
+            } else if (this.bHits > 3) {
+                return this.bName + ' Adv.';
+
             } else {
                 return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
             }
