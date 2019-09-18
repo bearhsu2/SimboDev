@@ -12,15 +12,22 @@ test('When Initial Then Love All', () => {
 });
 
 test('When a Then Fifteen Love', () => {
-    tennis.a();
+    makeAHits(1);
     checkScore('Fifteen Love');
 });
 
 test('When aa Then Thirty Love', () => {
-    tennis.a();
-    tennis.a();
+
+    makeAHits(2);
     checkScore('Thirty Love');
 });
+
+function makeAHits(times) {
+    for (let i = 0; i < times; i++) {
+        tennis.a();
+    }
+
+}
 
 function checkScore(expected) {
     expect(tennis.score()).toBe(expected);

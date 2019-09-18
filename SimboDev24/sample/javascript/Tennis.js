@@ -18,7 +18,6 @@ function Tennis() {
             return myMap.get(this.aHits) + ' Love';
         }
 
-
         return 'Love All';
     }
 
