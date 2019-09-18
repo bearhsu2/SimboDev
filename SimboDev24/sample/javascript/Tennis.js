@@ -1,8 +1,8 @@
-var myMap = new Map();
+const hitsToScore = new Map();
 
-myMap.set(1, "Fifteen");
-myMap.set(2, "Thirty");
-myMap.set(3, "Forty");
+hitsToScore.set(1, "Fifteen");
+hitsToScore.set(2, "Thirty");
+hitsToScore.set(3, "Forty");
 
 function Tennis() {
 
@@ -16,7 +16,7 @@ function Tennis() {
     this.score = function () {
 
         if (this.aHits > 0) {
-            return myMap.get(this.aHits) + ' Love';
+            return hitsToScore.get(this.aHits) + ' Love';
         }
 
         return 'Love All';
