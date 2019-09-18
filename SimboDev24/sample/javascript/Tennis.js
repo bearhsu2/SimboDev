@@ -21,6 +21,10 @@ function Tennis(aName, bName) {
         this.bHits++;
     };
 
+    this.diffMoreThanOne = function () {
+        return Math.abs(this.aHits - this.bHits) > 1;
+    };
+
     this.score = function () {
 
 
@@ -32,12 +36,10 @@ function Tennis(aName, bName) {
 
             if (Math.max(this.aHits, this.bHits) > 3) {
 
-                if (Math.abs(this.aHits - this.bHits) > 1) {
-                return leadingPlayer.call(this) + ' Wins';
-
+                if (this.diffMoreThanOne()) {
+                    return this.leadingPlayer() + ' Wins';
                 } else {
-
-                return leadingPlayer.call(this) + ' Adv.';
+                    return this.leadingPlayer() + ' Adv.';
                 }
 
             } else {
@@ -49,7 +51,7 @@ function Tennis(aName, bName) {
     };
 
 
-    function leadingPlayer() {
+    this.leadingPlayer = function () {
         return this.aHits > this.bHits
             ? this.aName
             : this.bName;
