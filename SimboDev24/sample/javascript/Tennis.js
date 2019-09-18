@@ -29,10 +29,11 @@ function Tennis(aName, bName) {
                 : hitsToScore.get(this.aHits) + ' All';
         } else {
 
-            if (this.aHits > 3) {
-                return this.aName + ' Adv.';
-            } else if (this.bHits > 3) {
-                return this.bName + ' Adv.';
+            if (Math.max(this.aHits, this.bHits) > 3) {
+
+                return (this.aHits > this.bHits
+                    ? this.aName
+                    : this.bName) + ' Adv.';
 
             } else {
                 return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
