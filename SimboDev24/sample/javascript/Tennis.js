@@ -36,11 +36,16 @@ function Tennis(aName, bName) {
 
             if (Math.max(this.aHits, this.bHits) > 3) {
 
-                if (this.diffMoreThanOne()) {
-                    return this.leadingPlayer() + ' Wins';
-                } else {
-                    return this.leadingPlayer() + ' Adv.';
-                }
+                return this.leadingPlayer() +
+                    (this.diffMoreThanOne()
+                        ? ' Wins'
+                        : ' Adv.');
+
+                // if (this.diffMoreThanOne()) {
+                //     return this.leadingPlayer() + ' Wins';
+                // } else {
+                //     return this.leadingPlayer() + ' Adv.';
+                // }
 
             } else {
                 return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
