@@ -25,10 +25,14 @@ function Tennis(aName, bName) {
         return Math.abs(this.aHits - this.bHits) > 1;
     };
 
+    this.sameScore = function () {
+        return this.aHits === this.bHits;
+    };
+
     this.score = function () {
 
 
-        if (this.aHits === this.bHits) {
+        if (this.sameScore()) {
             return this.aHits >= 3
                 ? 'Deuce'
                 : hitsToScore.get(this.aHits) + ' All';
@@ -40,12 +44,6 @@ function Tennis(aName, bName) {
                     (this.diffMoreThanOne()
                         ? ' Wins'
                         : ' Adv.');
-
-                // if (this.diffMoreThanOne()) {
-                //     return this.leadingPlayer() + ' Wins';
-                // } else {
-                //     return this.leadingPlayer() + ' Adv.';
-                // }
 
             } else {
                 return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
