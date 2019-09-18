@@ -20,11 +20,20 @@ function Tennis() {
 
     this.score = function () {
 
+        if (this.aHits === this.bHits) {
+
+            if (this.aHits === 0) {
+                return 'Love All';
+
+            } else {
+                return 'Fifteen All';
+            }
+        }
+
         if (this.aHits > 0 || this.bHits > 0) {
             return hitsToScore.get(this.aHits) + ' ' + hitsToScore.get(this.bHits);
         }
 
-        return 'Love All';
     }
 
 }
