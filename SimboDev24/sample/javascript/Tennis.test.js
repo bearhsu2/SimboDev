@@ -22,6 +22,12 @@ test('When aa Then Thirty Love', () => {
     checkScore('Thirty Love');
 });
 
+test('When aaa Then Forty Love', () => {
+
+    makeAHits(3);
+    checkScore('Forty Love');
+});
+
 function makeAHits(times) {
     for (let i = 0; i < times; i++) {
         tennis.a();
