@@ -29,6 +29,11 @@ function Tennis(aName, bName) {
         return this.aHits === this.bHits;
     };
 
+    this.afterDeuce = function () {
+
+        return Math.max(this.aHits, this.bHits) > 3;
+    };
+
     this.score = function () {
 
 
@@ -37,10 +42,10 @@ function Tennis(aName, bName) {
                 ? 'Deuce'
                 : hitsToScore.get(this.aHits) + ' All';
         } else {
+            if (this.afterDeuce()) {
 
-            if (Math.max(this.aHits, this.bHits) > 3) {
-
-                return this.leadingPlayer() +
+                return this.leadingPlayer()
+                    +
                     (this.diffMoreThanOne()
                         ? ' Wins'
                         : ' Adv.');
