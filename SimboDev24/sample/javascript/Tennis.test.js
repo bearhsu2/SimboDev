@@ -55,6 +55,13 @@ test('When aabb Then Thirty All', () => {
     checkScore('Thirty All');
 });
 
+test('When aaabbb Then Deuce', () => {
+
+    makeAHits(3);
+    makeBHits(3);
+    checkScore('Deuce');
+});
+
 function makeAHits(times) {
     for (let i = 0; i < times; i++) {
         tennis.a();
