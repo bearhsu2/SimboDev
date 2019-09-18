@@ -31,7 +31,7 @@ test('When aaa Then Forty Love', () => {
 
 test('When b Then Love Fifteen', () => {
 
-    tennis.b();
+    makeBHits(1);
     checkScore('Love Fifteen');
 });
 
@@ -39,7 +39,11 @@ function makeAHits(times) {
     for (let i = 0; i < times; i++) {
         tennis.a();
     }
-
+}
+function makeBHits(times) {
+    for (let i = 0; i < times; i++) {
+        tennis.b();
+    }
 }
 
 function checkScore(expected) {
