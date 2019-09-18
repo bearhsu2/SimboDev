@@ -16,6 +16,12 @@ test('When a Then Fifteen Love', () => {
     checkScore('Fifteen Love');
 });
 
+test('When aa Then Thirty Love', () => {
+    tennis.a();
+    tennis.a();
+    checkScore('Thirty Love');
+});
+
 function checkScore(expected) {
     expect(tennis.score()).toBe(expected);
 }
