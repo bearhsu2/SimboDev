@@ -5,7 +5,7 @@ describe("Tennis test", function () {
     });
 
     beforeEach(function () {
-        main = new Main()
+        main = new Main("Kuma","Beck");
     });
 
     afterEach(function () {
@@ -49,6 +49,42 @@ describe("Tennis test", function () {
         firstPlayerHitLoop(1);
         secondPlayerHitLoop(1);
         check("Fifteen All");
+    });
+
+    it("test Thirty All", function () {
+        firstPlayerHitLoop(2);
+        secondPlayerHitLoop(2);
+        check("Thirty All");
+    });
+
+    it("test Deuce", function () {
+        firstPlayerHitLoop(3);
+        secondPlayerHitLoop(3);
+        check("Deuce");
+    });
+
+    it("test Kuma Adv.", function () {
+        firstPlayerHitLoop(4);
+        secondPlayerHitLoop(3);
+        check("Kuma Adv.");
+    });
+
+    it("test Beck Adv.", function () {
+        firstPlayerHitLoop(3);
+        secondPlayerHitLoop(4);
+        check("Beck Adv.");
+    });
+
+    it("test Beck Wins", function () {
+        firstPlayerHitLoop(3);
+        secondPlayerHitLoop(5);
+        check("Beck Wins");
+    });
+
+    it("test Kuma Wins", function () {
+        firstPlayerHitLoop(4);
+        secondPlayerHitLoop(1);
+        check("Kuma Wins");
     });
 
     function firstPlayerHitLoop(count:number)
