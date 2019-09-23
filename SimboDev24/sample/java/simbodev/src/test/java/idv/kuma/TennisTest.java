@@ -40,6 +40,12 @@ public class TennisTest {
         check("Forty Love");
     }
 
+    @Test
+    public void When_b_Then_Love_Fifteen() {
+        tennis.b();
+
+        check("Love Fifteen");
+    }
 
     private void aGetPoints(int times) {
         for (int i = 0; i < times; i++) {

@@ -12,16 +12,26 @@ public class Tennis {
         scoreToShow.put(3, "Forty");
     }
 
-    int aScore;
+    private int aScore;
+    private int bScore;
 
     public String score() {
         if (aScore > 0) {
             return scoreToShow.get(aScore) + " Love";
         }
+
+        if (bScore>0) {
+            return "Love Fifteen";
+        }
+
         return "Love All";
     }
 
     public void a() {
         aScore++;
+    }
+
+    public void b() {
+        bScore++;
     }
 }
