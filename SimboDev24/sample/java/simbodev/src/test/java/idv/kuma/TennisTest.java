@@ -23,17 +23,22 @@ public class TennisTest {
 
     @Test
     public void When_a_Then_Fifteen_Love() {
-        tennis.a();
+        aGetPoints(1);
         check("Fifteen Love");
     }
+
     @Test
     public void When_aa_Then_Forty_Love() {
-        tennis.a();
-        tennis.a();
+        aGetPoints(2);
         check("Forty Love");
     }
 
+    private void aGetPoints(int times) {
+        for (int i = 0; i < times; i++) {
 
+            tennis.a();
+        }
+    }
 
 
     private void check(String s) {
