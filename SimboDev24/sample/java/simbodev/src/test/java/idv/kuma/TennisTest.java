@@ -74,6 +74,14 @@ public class TennisTest {
         check("Deuce");
     }
 
+    @Test
+    public void When_aaabbba_Then_A_Adv() {
+        aGetsPoints(3);
+        bGetsPoints(3);
+        aGetsPoints(1);
+        check("Kuma Adv");
+    }
+
 
 
 
