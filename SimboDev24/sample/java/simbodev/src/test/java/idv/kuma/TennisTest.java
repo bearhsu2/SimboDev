@@ -67,6 +67,12 @@ public class TennisTest {
         check("Thirty All");
     }
 
+    @Test
+    public void When_aaabbb_Then_Deuce() {
+        aGetsPoints(3);
+        bGetsPoints(3);
+        check("Deuce");
+    }
 
 
 

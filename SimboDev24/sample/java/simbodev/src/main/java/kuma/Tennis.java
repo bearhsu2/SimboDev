@@ -20,6 +20,10 @@ public class Tennis {
     public String score() {
 
         if (aScore == bScore) {
+
+            if (aScore >= 3) {
+                return "Deuce";
+            }
             return scoreToShow.get(aScore) + " All";
         }
 
