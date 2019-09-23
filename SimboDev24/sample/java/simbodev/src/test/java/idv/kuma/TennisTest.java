@@ -60,6 +60,12 @@ public class TennisTest {
         check("Fifteen All");
     }
 
+    @Test
+    public void When_aabb_Then_Thirty_All() {
+        aGetsPoints(2);
+        bGetsPoints(2);
+        check("Thirty All");
+    }
 
 
 

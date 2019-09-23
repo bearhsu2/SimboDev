@@ -20,7 +20,7 @@ public class Tennis {
     public String score() {
 
         if (aScore > 0 && aScore == bScore) {
-            return "Fifteen All";
+            return scoreToShow.get(aScore) + " All";
         }
 
         if (aScore > 0 || bScore > 0) {
