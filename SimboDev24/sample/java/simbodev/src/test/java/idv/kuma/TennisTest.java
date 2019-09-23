@@ -23,33 +23,37 @@ public class TennisTest {
 
     @Test
     public void When_a_Then_Fifteen_Love() {
-        aGetPoints(1);
+        aGetsPoints(1);
         check("Fifteen Love");
     }
 
     @Test
     public void When_aa_Then_Thirty_Love() {
-        aGetPoints(2);
+        aGetsPoints(2);
         check("Thirty Love");
     }
 
 
     @Test
     public void When_aaa_Then_Forty_Love() {
-        aGetPoints(3);
+        aGetsPoints(3);
         check("Forty Love");
     }
 
     @Test
     public void When_b_Then_Love_Fifteen() {
-        tennis.b();
-
+        bGetsPoints(1);
         check("Love Fifteen");
     }
 
-    private void aGetPoints(int times) {
+    private void bGetsPoints(int times) {
         for (int i = 0; i < times; i++) {
+            tennis.b();
+        }
+    }
 
+    private void aGetsPoints(int times) {
+        for (int i = 0; i < times; i++) {
             tennis.a();
         }
     }
