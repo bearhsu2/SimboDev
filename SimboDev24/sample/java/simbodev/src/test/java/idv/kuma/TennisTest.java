@@ -17,13 +17,20 @@ public class TennisTest {
 
     @Test
     public void When_Init_Then_Love_All() {
-        Assert.assertEquals("Love All", tennis.score());
+        check("Love All");
+    }
+
+    private void check(String s) {
+        Assert.assertEquals(s, tennis.score());
     }
 
 
     @Test
     public void When_a_Then_Fifteen_Love() {
         tennis.a();
-        Assert.assertEquals("Fifteen Love", tennis.score());
+        check("Fifteen Love");
     }
+
+
+
 }
