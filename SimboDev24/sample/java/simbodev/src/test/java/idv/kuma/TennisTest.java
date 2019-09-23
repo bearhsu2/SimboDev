@@ -11,7 +11,7 @@ public class TennisTest {
 
     @Before
     public void setUp() throws Exception {
-        tennis = new Tennis();
+        tennis = new Tennis("Kuma");
 
     }
 
