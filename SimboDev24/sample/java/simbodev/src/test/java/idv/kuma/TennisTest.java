@@ -11,7 +11,7 @@ public class TennisTest {
 
     @Before
     public void setUp() throws Exception {
-        tennis = new Tennis("Kuma");
+        tennis = new Tennis("Kuma", "Gary");
 
     }
 
@@ -80,6 +80,17 @@ public class TennisTest {
         aGetsPoints(1);
         check("Kuma Adv");
     }
+
+
+    @Test
+    public void When_aaabbbb_Then_B_Adv() {
+        makeDeuce();
+        bGetsPoints(1);
+        check("Gary Adv");
+    }
+
+
+
 
     private void makeDeuce() {
         aGetsPoints(3);

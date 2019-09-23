@@ -17,9 +17,11 @@ public class Tennis {
     private int aScore;
     private int bScore;
     private String aName;
+    private String bName;
 
-    public Tennis(String aName) {
+    public Tennis(String aName, String bName) {
         this.aName = aName;
+        this.bName = bName;
     }
 
     public String score() {
@@ -33,6 +35,10 @@ public class Tennis {
 
         if (aScore > 3) {
             return aName + " Adv";
+        }
+
+        if (bScore > 3) {
+            return bName + " Adv";
         }
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
