@@ -35,15 +35,17 @@ public class Tennis {
 
         if (Math.max(aScore, bScore) > 3) {
 
-            if (aScore > bScore) {
-                return aName + " Adv";
-            } else {
-                return bName + " Adv";
-            }
+            return leadingPlayer() + " Adv";
         }
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
 
+    }
+
+    private String leadingPlayer() {
+        return aScore > bScore
+                ? aName
+                : bName;
     }
 
     public void a() {
