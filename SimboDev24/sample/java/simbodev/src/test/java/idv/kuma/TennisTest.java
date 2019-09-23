@@ -28,10 +28,11 @@ public class TennisTest {
     }
 
     @Test
-    public void When_aa_Then_Forty_Love() {
+    public void When_aa_Then_Thirty_Love() {
         aGetPoints(2);
-        check("Forty Love");
+        check("Thirty Love");
     }
+
 
     private void aGetPoints(int times) {
         for (int i = 0; i < times; i++) {

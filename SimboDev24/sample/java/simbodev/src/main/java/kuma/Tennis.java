@@ -8,7 +8,7 @@ public class Tennis {
     private static Map<Integer, String> scoreToShow = new HashMap<>();
     static {
         scoreToShow.put(1, "Fifteen");
-        scoreToShow.put(2, "Forty");
+        scoreToShow.put(2, "Thirty");
     }
 
     int aScore;
