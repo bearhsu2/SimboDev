@@ -34,6 +34,13 @@ public class TennisTest {
     }
 
 
+    @Test
+    public void When_aaa_Then_Forty_Love() {
+        aGetPoints(3);
+        check("Forty Love");
+    }
+
+
     private void aGetPoints(int times) {
         for (int i = 0; i < times; i++) {
 

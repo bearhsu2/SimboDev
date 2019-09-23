@@ -9,6 +9,7 @@ public class Tennis {
     static {
         scoreToShow.put(1, "Fifteen");
         scoreToShow.put(2, "Thirty");
+        scoreToShow.put(3, "Forty");
     }
 
     int aScore;
