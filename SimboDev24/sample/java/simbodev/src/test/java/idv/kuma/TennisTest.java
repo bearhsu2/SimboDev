@@ -46,6 +46,18 @@ public class TennisTest {
         check("Love Fifteen");
     }
 
+
+    @Test
+    public void When_bb_Then_Love_Thirty() {
+        bGetsPoints(2);
+        check("Love Thirty");
+    }
+
+
+
+
+
+
     private void bGetsPoints(int times) {
         for (int i = 0; i < times; i++) {
             tennis.b();
