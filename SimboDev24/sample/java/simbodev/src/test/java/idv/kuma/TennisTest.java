@@ -76,13 +76,15 @@ public class TennisTest {
 
     @Test
     public void When_aaabbba_Then_A_Adv() {
-        aGetsPoints(3);
-        bGetsPoints(3);
+        makeDeuce();
         aGetsPoints(1);
         check("Kuma Adv");
     }
 
-
+    private void makeDeuce() {
+        aGetsPoints(3);
+        bGetsPoints(3);
+    }
 
 
     private void bGetsPoints(int times) {
