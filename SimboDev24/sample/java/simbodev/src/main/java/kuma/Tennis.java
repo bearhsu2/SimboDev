@@ -8,6 +8,7 @@ public class Tennis {
     private static Map<Integer, String> scoreToShow = new HashMap<>();
 
     static {
+        scoreToShow.put(0, "Love");
         scoreToShow.put(1, "Fifteen");
         scoreToShow.put(2, "Thirty");
         scoreToShow.put(3, "Forty");
@@ -17,13 +18,10 @@ public class Tennis {
     private int bScore;
 
     public String score() {
-        if (aScore > 0) {
-            return scoreToShow.get(aScore) + " Love";
+        if (aScore > 0 || bScore > 0) {
+            return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
         }
 
-        if (bScore > 0) {
-            return "Love " + scoreToShow.get(bScore);
-        }
 
         return "Love All";
     }
