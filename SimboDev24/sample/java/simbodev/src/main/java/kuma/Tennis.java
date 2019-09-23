@@ -19,16 +19,13 @@ public class Tennis {
 
     public String score() {
 
-        if (aScore > 0 && aScore == bScore) {
+        if (aScore == bScore) {
             return scoreToShow.get(aScore) + " All";
         }
 
-        if (aScore > 0 || bScore > 0) {
-            return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
-        }
+        return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
 
-        return "Love All";
     }
 
     public void a() {
