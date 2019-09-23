@@ -33,12 +33,13 @@ public class Tennis {
         }
 
 
-        if (aScore > 3) {
-            return aName + " Adv";
-        }
+        if (Math.max(aScore, bScore) > 3) {
 
-        if (bScore > 3) {
-            return bName + " Adv";
+            if (aScore > bScore) {
+                return aName + " Adv";
+            } else {
+                return bName + " Adv";
+            }
         }
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
