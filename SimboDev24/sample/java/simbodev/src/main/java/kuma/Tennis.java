@@ -18,6 +18,11 @@ public class Tennis {
     private int bScore;
 
     public String score() {
+
+        if (aScore > 0 && aScore == bScore) {
+            return "Fifteen All";
+        }
+
         if (aScore > 0 || bScore > 0) {
             return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
         }

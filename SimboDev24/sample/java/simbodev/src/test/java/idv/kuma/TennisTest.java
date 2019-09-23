@@ -53,6 +53,12 @@ public class TennisTest {
         check("Love Thirty");
     }
 
+    @Test
+    public void When_ab_Then_Fifteen_All() {
+        aGetsPoints(1);
+        bGetsPoints(1);
+        check("Fifteen All");
+    }
 
 
 
