@@ -32,14 +32,18 @@ public class Tennis {
                     : scoreToShow.get(aScore) + " All";
         }
 
-
         if (Math.max(aScore, bScore) > 3) {
-
-            return leadingPlayer() + " Adv";
+            return isWin()
+                    ? leadingPlayer() + " Wins"
+                    : leadingPlayer() + " Adv";
         }
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
 
+    }
+
+    private boolean isWin() {
+        return Math.abs(bScore - aScore) > 1;
     }
 
     private String leadingPlayer() {

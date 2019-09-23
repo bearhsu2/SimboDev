@@ -89,6 +89,12 @@ public class TennisTest {
         check("Gary Adv");
     }
 
+    @Test
+    public void When_aaabbbbb_Then_B_Wins() {
+        makeDeuce();
+        bGetsPoints(2);
+        check("Gary Wins");
+    }
 
 
 
