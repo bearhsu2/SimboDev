@@ -26,7 +26,7 @@ public class Tennis {
 
     public String score() {
 
-        if (aScore == bScore) {
+        if (sameScore()) {
             return aScore >= 3
                     ? "Deuce"
                     : scoreToShow.get(aScore) + " All";
@@ -40,6 +40,10 @@ public class Tennis {
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
 
+    }
+
+    private boolean sameScore() {
+        return aScore == bScore;
     }
 
     private boolean isWin() {
