@@ -21,11 +21,11 @@ public class Tennis {
 
         if (aScore == bScore) {
 
-            if (aScore >= 3) {
-                return "Deuce";
-            }
-            return scoreToShow.get(aScore) + " All";
+            return aScore >= 3
+                    ? "Deuce"
+                    : scoreToShow.get(aScore) + " All";
         }
+
 
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 

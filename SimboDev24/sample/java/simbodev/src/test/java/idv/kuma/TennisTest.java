@@ -76,6 +76,7 @@ public class TennisTest {
 
 
 
+
     private void bGetsPoints(int times) {
         for (int i = 0; i < times; i++) {
             tennis.b();
