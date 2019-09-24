@@ -112,5 +112,4 @@ public class TennisTest {
     }
 
 
->>>>>>>feature/java_02
 }
