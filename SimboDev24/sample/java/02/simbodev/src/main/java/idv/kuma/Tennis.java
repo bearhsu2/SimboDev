@@ -30,23 +30,26 @@ public class Tennis {
     public String score() {
 
         if (sameScore()) {
-
             return afterDeuce()
                     ? "Deuce"
                     : scoreToShow.get(aScore) + " All";
-
         }
 
         if (afterDeuce()) {
-
-            return leadingPlayer()
-                    + " Adv";
-
+            return leadingPlayer() + (
+                    diffMoreThanOne()
+                            ? " Wins"
+                            : " Adv"
+            );
         }
 
         return scoreToShow.get(aScore) + " " + scoreToShow.get(bScore);
 
 
+    }
+
+    private boolean diffMoreThanOne() {
+        return Math.abs(aScore - bScore) > 1;
     }
 
     private String leadingPlayer() {

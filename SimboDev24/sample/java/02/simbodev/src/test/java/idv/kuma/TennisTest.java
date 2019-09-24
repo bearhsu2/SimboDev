@@ -80,12 +80,22 @@ public class TennisTest {
         Assert.assertEquals("Kuma Adv", tennis.score());
     }
 
+
+
     @Test
     public void When_3_4_Then_Player2_Adv() {
         makeDeuce();
 
         bScores(1);
         Assert.assertEquals("Tom Adv", tennis.score());
+    }
+
+    @Test
+    public void When_3_5_Then_Player2_Wins() {
+        makeDeuce();
+
+        bScores(2);
+        Assert.assertEquals("Tom Wins", tennis.score());
     }
 
     private void bScores(int times) {
